@@ -1,19 +1,10 @@
 /*
 =================================================================================================================
-Stored procedure : Load Bronze Layer
+DDL Script : Create Bronze schemas Tables
 =================================================================================================================
 SCRIPT PURPOSE :
-	-this stored procedures load data into the 'bronze' schema from extrenal csv files.
-  It preform the following actions:
-  -truncate the bronze layer tables before loading the data.
-  -USES 'COPY' COMMAND TO BULK INSERT THE WHOLE CSV FILE DATA TO BRONZE TABLE 
-
-  Parameters:
-  None.
-  this stored procedure doesn't accept any parameters or return any value
-
-  USAGE EXAMPLE :
-  CALL bronze.load_bronze();             
+	this script creates tables in the 'bronze' schema , dropping existing tables if they already exists.
+	Run this script to re-define the DDL Structure of the 'bronze' tables 
 ================================================================================================================	
 
 
@@ -129,9 +120,8 @@ BEGIN
     RAISE NOTICE 'End time: %', phase_end_time;
     RAISE NOTICE 'Total duration for this phase: % seconds', EXTRACT(EPOCH FROM (phase_end_time - Phase_start_time));
     RAISE NOTICE '======================================================================';
-    RAISE NOTICE '>> TRUNCATING TABLE bronze.erp_px_cat_g1v2';
-    TRUNCATE TABLE bronze.erp_px_cat_g1v2;
------------------------------------------------------------------------------------------------------------
+    -----------------------------------------------------------------------------------------------------------
+	RAISE NOTICE 'The Total Duration of loading the csv files into the bronze layer tables';
     end_time := CURRENT_TIMESTAMP;
     RAISE NOTICE '======================================================================';
     RAISE NOTICE 'Start time: %', start_time;
@@ -140,8 +130,3 @@ BEGIN
     RAISE NOTICE '======================================================================';
 END;
 $$;
-
--- Now you can call the stored proecdure Using CALL 
-CALL bronze.load_bronze();    
-
-CALL bronze.load_bronze()
