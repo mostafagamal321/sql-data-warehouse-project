@@ -1,21 +1,3 @@
-/*
-==========================================================================
-Stored Procedure : Load silver Layer (Bronze --> silver)
-==========================================================================
-Sript Purpose:
-	This stored procedure performs the ETL (Extract , Transform , Load) Porcess to
-	populate the 'silver' schema tables from the 'bronze' schema.
-	Actions performed :
-	- Truncates silver Tables
-	-Insert Transformed and cleansed data from bronze into silver tables.
-	parameters:
-	None , this stored procedure doesn't accept any parameters or return any values.
-
-	Usage example :
-	CALL silver.load_silver; 
-	======================================================================
-*/
-
 CREATE OR REPLACE PROCEDURE silver.load_silver() 
 
 AS $$
@@ -24,10 +6,10 @@ DECLARE
 	end_date  TIMESTAMP;
 	phase_start_date TIMESTAMP;
 	phase_end_date TIMESTAMP; 
-	BEGIN
+BEGIN
 	RAISE NOTICE '========================================================================================';
 	RAISE NOTICE '========================================================================================';
-	RAISE NOTICE '                     INSERTING DATA INTO silver LAYER AFTER                             ';
+	RAISE NOTICE '                     INSERTING DATA INTO SLIVER LAYER AFTER                             ';
 	RAISE NOTICE '========================================================================================';
 	RAISE NOTICE '========================================================================================';
 	start_date := CURRENT_TIMESTAMP;
@@ -48,7 +30,9 @@ DECLARE
 		cst_create_date
 	)
 	SELECT 
-		cst_id, 
+		CASE WHEN cst_id IS NULL THEN 0
+		ELSE cst_id
+		END AS cst_id , 
 		cst_key, 
 		TRIM(cst_firstname) AS cst_firstname, 
 		TRIM(cst_lastname) AS cst_lastname, 
@@ -221,10 +205,6 @@ DECLARE
     RAISE NOTICE 'End time: %', end_date;
     RAISE NOTICE 'Total duration for this phase: % seconds', EXTRACT(EPOCH FROM (end_date - start_date));
     RAISE NOTICE '======================================================================';
-	
 END;
 $$ LANGUAGE plpgsql;
-
 CALL silver.load_silver()
-
-
