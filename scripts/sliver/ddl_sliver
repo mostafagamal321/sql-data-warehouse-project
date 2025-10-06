@@ -1,17 +1,17 @@
 
 /*
 =================================================================================================================
-DDL Script : Create Sliver schemas Tables
+DDL Script : Create silver schemas Tables
 =================================================================================================================
 SCRIPT PURPOSE :
-	this script creates tables in the 'sliver' schema , dropping existing tables if they already exists.
-	Run this script to re-define the DDL Structure of the 'sliver' tables 
+	this script creates tables in the 'silver' schema , dropping existing tables if they already exists.
+	Run this script to re-define the DDL Structure of the 'silver' tables 
 ================================================================================================================	
 
  /*=================== CRM Source Tables =============================*/
 
-DROP TABLE IF EXISTS sliver.crm_cust_info;
-CREATE TABLE sliver.crm_cust_info (
+DROP TABLE IF EXISTS silver.crm_cust_info;
+CREATE TABLE silver.crm_cust_info (
 	cst_id INT ,
 	cst_key VARCHAR(50) ,
 	cst_firstname VARCHAR(50) ,
@@ -25,8 +25,8 @@ CREATE TABLE sliver.crm_cust_info (
 -- I just copied the col sequences and names from the csv file to make sure there is no mistake in the naming
 -- also make sure to follow the conventinal naming of the table by startin with the source system
 
-DROP TABLE IF EXISTS sliver.crm_prd_info;
-CREATE TABLE sliver.crm_prd_info (
+DROP TABLE IF EXISTS silver.crm_prd_info;
+CREATE TABLE silver.crm_prd_info (
 prd_id INT ,
 cat_id CHARACTER VARYING (50),
 prd_key VARCHAR(150) , 
@@ -39,8 +39,8 @@ dwh_create_date TIMESTAMP DEFAULT NOW()
 );
 
 -- sls_ord_num,sls_prd_key,sls_cust_id,sls_order_dt,sls_ship_dt,sls_due_dt,sls_sales,sls_quantity,sls_price
-DROP TABLE IF EXISTS sliver.crm_sales_details;
-CREATE TABLE sliver.crm_sales_details (
+DROP TABLE IF EXISTS silver.crm_sales_details;
+CREATE TABLE silver.crm_sales_details (
 sls_ord_num CHARACTER VARYING (50) ,
 sls_prd_key CHARACTER VARYING (50) , 
 sls_cust_id INT ,
@@ -56,8 +56,8 @@ dwh_create_date TIMESTAMP DEFAULT NOW()
 
 /*=================== ERP Source Tables =============================*/
 -- CID,BDATE,GEN
-DROP TABLE IF EXISTS sliver.erp_CUST_AZ12;
-CREATE TABLE sliver.erp_CUST_AZ12 (
+DROP TABLE IF EXISTS silver.erp_CUST_AZ12;
+CREATE TABLE silver.erp_CUST_AZ12 (
 CID VARCHAR(50), 
 BDATE DATE , 
 GEN CHAR(10),
@@ -65,16 +65,16 @@ dwh_create_date TIMESTAMP DEFAULT NOW()
 );
 
 --CID,CNTRY
-DROP TABLE IF EXISTS sliver.erp_LOC_A101;
-CREATE TABLE sliver.erp_LOC_A101 (
+DROP TABLE IF EXISTS silver.erp_LOC_A101;
+CREATE TABLE silver.erp_LOC_A101 (
 CID VARCHAR(50) ,
 CNTRY VARCHAR(50),
 dwh_create_date TIMESTAMP DEFAULT NOW()
 );
 
 -- ID,CAT,SUBCAT,MAINTENANCE
-DROP TABLE IF EXISTS sliver.erp_PX_CAT_G1V2;
-CREATE TABLE sliver.erp_PX_CAT_G1V2 (
+DROP TABLE IF EXISTS silver.erp_PX_CAT_G1V2;
+CREATE TABLE silver.erp_PX_CAT_G1V2 (
 ID VARCHAR(30),
 CAT VARCHAR(50),
 SUBCAT VARCHAR(80), 
