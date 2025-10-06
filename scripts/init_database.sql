@@ -7,7 +7,7 @@
 SCRIPT Purpose ?: 
 This script creates a new database named 'Datawarehouse' after checking if it already exists.
 if the database exists , it is dropped and recreated. additionally , the script sets up three schemas
-within the database : bronze , sliver  , gold 
+within the database : bronze , silver  , gold 
 
 
 WARNING !!!!!!!: 
@@ -43,7 +43,7 @@ CREATE DATABASE datawarehouse;
 
 -- creating the bronze layer of the arch ---
 CREATE SCHEMA Bronze;
--- creating the sliver layer of the arch ---
-CREATE SCHEMA Sliver;
+-- creating the silver layer of the arch ---
+CREATE SCHEMA silver;
 -- creating the gold layer of the arch ---
 CREATE SCHEMA Gold;
