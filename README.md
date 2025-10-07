@@ -74,36 +74,6 @@ We believe in accessible learning and development\! All tools and resources used
   * **Product Performance:** Determine the best and worst-selling products, calculate **Profit Margins**, and analyze inventory turnover.
   * **Sales Trends:** Analyze sales performance by **Time (Month/Quarter)**, **Store Location**, and **Day of the Week**.
 
-*For granular details on specific metrics and requirements, refer to `docs/requirements.md`.*
 
------
 
-## 📂 Repository Structure
-
-The following structure ensures a clean, modular, and easy-to-navigate project:
-
-```
-retail-sales-dwh-project/
-│
-├── datasets/             # 📥 Raw source files (CSV) - e.g., transactions, products, customers
-├── docs/                 # 📄 Project documentation and architectural details
-│   ├── data_catalog.md   # Catalog of datasets, including field descriptions and metadata
-│   ├── naming-conventions.md # Consistent naming guidelines for tables, columns, and files
-│   └── requirements.md   # Detailed requirements for the BI and Data Engineering phases
-│
-├── diagrams/             # 📐 Visual documentation using DrawIO
-│   ├── etl_process.drawio # Illustrates the ETL techniques and data flow steps
-│   ├── dwh_architecture.drawio # Shows the Medallion Architecture setup
-│   └── star_schema_model.drawio # The final dimensional model (Fact and Dimension tables)
-│
-├── scripts/              # 💻 SQL scripts for the entire ETL process and analysis
-│   ├── bronze/           # Scripts for initial raw data loading (CREATE TABLE, BULK INSERT)
-│   ├── silver/           # Scripts for data cleaning, transformation, and integration (UPDATE, MERGE, Stored Procedures)
-│   ├── gold/             # Scripts for creating the final Star Schema (CREATE DIMENSION/FACT)
-│   └── analysis/         # SQL scripts for final analytical queries and KPI generation
-│
-├── tests/                # ✅ Test scripts and data quality validation queries
-├── README.md             # This project overview and instructions
-├── LICENSE               # License information for the repository
-└── .gitignore            # Files and directories to be ignored by Git (e.g., temporary files)
 ```
