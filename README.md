@@ -1,22 +1,22 @@
 
-# 🏪 Retail Sales Analytics Data Warehouse Project
+#  Retail Sales Analytics Data Warehouse Project
 Welcome to the **Retail Sales Analytics Data Warehouse Project** repository\! 🚀 This comprehensive project showcases a modern data warehousing and analytics solution, transforming raw transactional data into actionable retail insights. Designed as a key portfolio piece, it highlights expertise in industry-standard data engineering and analytical practices.
 
 -----
 
-## 🏗️ Data Architecture: The Medallion Approach
+##  Data Architecture: The Medallion Approach
 
 The data architecture adheres to the widely-adopted **Medallion Architecture**, organizing data logically into three distinct layers to ensure quality, lineage, and usability: **Bronze**, **Silver**, and **Gold**.
 
 | Layer | Purpose | Key Processes |
 | :---: | :--- | :--- |
-| **Bronze** 🥉 | **Raw Ingestion** | Stores raw, untouched data directly from source systems (CSV files). The primary focus is fast, reliable ingestion into a **SQL Server Database**. |
-| **Silver** 🥈 | **Cleansing & Conformity** | Data is cleansed, standardized, de-duplicated, and integrated. This layer ensures data quality and prepares it for analytical modeling. |
-| **Gold** 🥇   | **Business-Ready Model** | Houses dimensional models (**Star Schema**) optimized for business intelligence, reporting, and high-performance analytical queries. |
+| **Bronze**  | **Raw Ingestion** | Stores raw, untouched data directly from source systems (CSV files). The primary focus is fast, reliable ingestion into a **SQL Server Database**. |
+| **Silver**  | **Cleansing & Conformity** | Data is cleansed, standardized, de-duplicated, and integrated. This layer ensures data quality and prepares it for analytical modeling. |
+| **Gold**   | **Business-Ready Model** | Houses dimensional models (**Star Schema**) optimized for business intelligence, reporting, and high-performance analytical queries. |
 
 -----
 
-## 📖 Project Overview
+##  Project Overview
 
 This project is a complete end-to-end data solution, covering:
 
@@ -25,7 +25,7 @@ This project is a complete end-to-end data solution, covering:
 3.  **Data Modeling:** Creating a **Star Schema** with Fact (Sales, Returns) and Dimension (Product, Customer, Date, Store) tables optimized for retail analytics.
 4.  **BI & Analytics:** Generating **SQL-based Key Performance Indicators (KPIs)** and reports to uncover critical retail insights.
 
-🎯 **This repository serves as an excellent demonstration of expertise in:**
+ **This repository serves as an excellent demonstration of expertise in:**
 
   * **Data Engineering** & **ETL Pipeline Development**
   * **SQL Development** (T-SQL)
@@ -35,7 +35,7 @@ This project is a complete end-to-end data solution, covering:
 
 -----
 
-## 🛠️ Important Links & Tools (All Free\!)
+##  Important Links & Tools (All Free\!)
 
 We believe in accessible learning and development\! All tools and resources used are freely available:
 
@@ -50,7 +50,7 @@ We believe in accessible learning and development\! All tools and resources used
 
 -----
 
-## 🚀 Project Requirements: The Build Phase
+##  Project Requirements: The Build Phase
 
 ### Building the Data Warehouse (Data Engineering)
 
